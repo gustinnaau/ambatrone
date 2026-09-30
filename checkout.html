@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Checkout | Ambatron</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+<style>
+*{box-sizing:border-box}.checkout-page{min-height:100vh;background:#f6f6f2;color:#171717}.checkout-page .nav{position:relative!important}.checkout-main{max-width:1120px;margin:0 auto;padding:64px 28px 90px}.checkout-title{margin:0 0 42px;font:600 clamp(38px,6vw,64px)/1 'Space Grotesk',sans-serif}.checkout-layout{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(280px,.65fr);gap:64px}.checkout-section-title{margin:0 0 22px;font:600 23px 'Space Grotesk',sans-serif}.checkout-item{display:grid;grid-template-columns:108px 1fr auto;align-items:center;gap:18px;padding:18px 0;border-bottom:1px solid #17171720}.checkout-item img{width:108px;height:108px;object-fit:cover;background:#e7e8e2}.checkout-item h2{margin:0 0 6px;font:600 18px 'Space Grotesk',sans-serif}.checkout-item p{margin:0;color:#707168;font-size:13px}.checkout-item>strong{font-size:14px}.quantity-control{display:flex;align-items:center;gap:10px;margin-top:14px}.quantity-control button{min-width:30px;height:30px;border:1px solid #17171728;background:transparent;color:#171717;cursor:pointer}.quantity-control .remove-item{width:auto;border:0;text-decoration:underline;font:600 12px Manrope,sans-serif}.checkout-summary{position:sticky;top:30px;height:max-content;padding:24px;background:#fff;border-top:3px solid #c7e954}.checkout-summary h2{margin:0 0 24px;font:600 22px 'Space Grotesk',sans-serif}.summary-line{display:flex;justify-content:space-between;padding:15px 0;border-top:1px solid #17171718;font-size:14px}.summary-line.total{font-size:17px;font-weight:800}.checkout-form{display:grid;gap:13px;margin-top:20px}.checkout-form label{display:grid;gap:7px;color:#62635c;font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase}.checkout-form input{width:100%;padding:12px;border:1px solid #17171730;background:#fafaf8;color:#171717;font:14px Manrope,sans-serif}.checkout-submit{padding:15px;border:0;background:#171717;color:#fff;font:800 12px Manrope,sans-serif;letter-spacing:.08em;text-transform:uppercase;cursor:pointer}.checkout-submit:hover{background:#718b25}.checkout-note,.checkout-message{color:#707168;font-size:12px;line-height:1.5}.checkout-message{color:#40531b;font-weight:700}.checkout-empty{padding:28px 0;color:#666}.checkout-empty a{display:inline-block;margin-top:15px;color:#171717;font-weight:800;text-decoration:underline}.cart-count{position:absolute;top:-5px;right:-5px;display:grid;place-items:center;width:18px;height:18px;border-radius:50%;background:#c7ff42;color:#171717;font-size:10px;font-weight:800}.icons a[aria-label="Cart"],.nav__icons a[aria-label="Cart"]{position:relative}.nav .account-control{position:relative}.account-menu{z-index:5}@media(max-width:760px){.checkout-main{padding:42px 20px 64px}.checkout-layout{grid-template-columns:1fr;gap:34px}.checkout-summary{position:static}.checkout-item{grid-template-columns:78px 1fr auto;gap:12px}.checkout-item img{width:78px;height:78px}.checkout-item h2{font-size:16px}.checkout-item>strong{font-size:12px}}
+</style>
+<style>
+.checkout-page{margin:0;background:#f1f2ed;font-family:'Manrope',sans-serif}
+.checkout-page .nav a{text-decoration:none;color:inherit}
+.checkout-main{max-width:1180px;padding:clamp(42px,6vw,76px) 28px 96px}
+.checkout-title{margin-bottom:48px;font-size:clamp(42px,6vw,68px)}
+.checkout-layout{grid-template-columns:minmax(0,1.4fr) minmax(320px,.6fr);gap:clamp(36px,6vw,84px);align-items:start}
+.checkout-layout>section{min-width:0}
+.checkout-section-title{padding-bottom:16px;border-bottom:1px solid #17171724}
+.checkout-item{grid-template-columns:112px minmax(0,1fr) auto;gap:20px;padding:22px 0}
+.checkout-item img{width:112px;height:112px}
+.checkout-item h2{font-size:19px}
+.checkout-item>strong{align-self:start;padding-top:3px;white-space:nowrap;font-size:15px}
+.quantity-control{gap:8px}
+.quantity-control button{min-width:34px;height:34px;transition:background .18s ease,border-color .18s ease}
+.quantity-control button:hover{border-color:#171717;background:#eef1e5}
+.quantity-control .remove-item{padding:0 4px}
+.checkout-summary{top:24px;padding:28px;border-top:4px solid #b6d942;box-shadow:0 16px 42px #1717170b}
+.checkout-summary h2{margin-bottom:26px;font-size:24px}
+.summary-line{padding:16px 0}
+.checkout-form{gap:16px;margin-top:22px}
+.checkout-form label{gap:8px;color:#4f5149;font-size:11px}
+.checkout-form input{min-height:46px;padding:12px 13px;border-color:#17171728;border-radius:2px;transition:border-color .18s ease,box-shadow .18s ease}
+.checkout-form input:focus{outline:0;border-color:#718b25;box-shadow:0 0 0 3px #b6d94255}
+.checkout-submit{min-height:48px;margin-top:3px;transition:background .18s ease,transform .18s ease}
+.checkout-submit:hover{transform:translateY(-1px)}
+.checkout-note{margin:0;color:#74766e}
+.checkout-message{margin:18px 0 0;padding:12px;background:#eef4dc}
+.checkout-empty{padding:34px 0;border-bottom:1px solid #17171720;line-height:1.7}
+.checkout-empty a{color:#566c1b}
+@media(max-width:760px){.checkout-main{padding:42px 20px 68px}.checkout-title{margin-bottom:34px}.checkout-layout{grid-template-columns:minmax(0,1fr);gap:32px}.checkout-summary{position:static}.checkout-item{grid-template-columns:84px minmax(0,1fr) auto;gap:13px;padding:18px 0}.checkout-item img{width:84px;height:84px}.checkout-item h2{font-size:17px}.checkout-item>strong{font-size:13px}.quantity-control{flex-wrap:wrap;gap:7px}.quantity-control button{min-width:32px;height:32px}}
+@media(max-width:420px){.checkout-item{grid-template-columns:68px minmax(0,1fr);gap:12px}.checkout-item img{width:68px;height:68px}.checkout-item>strong{grid-column:2;grid-row:1;justify-self:end;padding:0}.checkout-item__details{grid-column:2}.quantity-control{margin-top:10px}.checkout-summary{padding:22px}}
+</style>
+</head>
+<body class="checkout-page">
+<nav class="nav"><a class="logo" href="index.html#home"><img src="amba-logo.svg" alt="Ambatron"></a><div class="links"><a href="index.html#home">Home</a><a href="drones.html">Drones</a><a href="about.html">About</a><a href="support.html">Support</a></div><div class="icons"><a href="search.html" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></a><a href="checkout.html" aria-label="Cart"><svg viewBox="0 0 24 24"><path d="M3 4h2l2 11h11l2-7H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg></a><a href="login.html" aria-label="Account"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></a></div></nav>
+<main class="checkout-main"><h1 class="checkout-title">Checkout</h1><div class="checkout-layout"><section><h2 class="checkout-section-title">Your bag</h2><div id="checkout-items"></div><p id="checkout-empty" class="checkout-empty" hidden>Your bag is empty.<br><a href="search.html">Explore products</a></p></section><aside id="checkout-summary" class="checkout-summary"><h2>Order summary</h2><div class="summary-line"><span>Subtotal</span><strong id="checkout-subtotal">$0.00</strong></div><div class="summary-line"><span>Shipping</span><span>Complimentary</span></div><div class="summary-line total"><span>Total</span><strong id="checkout-subtotal-total">$0.00</strong></div><form id="checkout-form" class="checkout-form"><label>Email address<input type="email" name="email" autocomplete="email" required></label><label>Full name<input type="text" name="name" autocomplete="name" required></label><label>Shipping address<input type="text" name="address" autocomplete="street-address" required></label><label>City<input type="text" name="city" autocomplete="address-level2" required></label><button class="checkout-submit" type="submit">Place demo order</button><p class="checkout-note">Demo checkout only. No payment details are collected and no charge will be made.</p></form><p id="checkout-message" class="checkout-message" role="status" aria-live="polite"></p></aside></div></main>
+</body>
+</html>

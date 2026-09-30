@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ambatron Support</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+*{box-sizing:border-box}body{margin:0;font-family:Manrope,sans-serif;color:#121212;background:#fff}a{text-decoration:none;color:inherit}.nav{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:20px 5vw;background:#121212;color:#fff;flex-wrap:wrap}.logo img{display:block;width:75px}.links{display:flex;gap:clamp(16px,3vw,40px);padding:12px 28px;border:1px solid #ffffff45;border-radius:999px;background:#ffffff1f;backdrop-filter:blur(18px);font-size:15px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}.icons{display:flex;gap:12px}.icons a{width:44px;height:44px;display:grid;place-items:center;border:1px solid #ffffff45;border-radius:50%;background:#ffffff1c}.icons svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.support{padding:100px 5vw;min-height:calc(100vh - 125px);background:linear-gradient(180deg,#fff 0%,#f4f4f4 100%)}.support h1{margin:0 auto 48px;max-width:1300px;font-size:clamp(34px,5vw,64px);font-weight:600}.grid{display:grid;grid-template-columns:repeat(5,1fr);gap:24px;max-width:1300px;margin:auto}.card{min-height:220px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;padding:24px 12px;border:1px solid #12121214;border-radius:20px;background:#ffffffb8;box-shadow:0 18px 36px #0000000c;transition:transform .25s ease,box-shadow .25s ease}.card:hover{transform:translateY(-5px);box-shadow:0 24px 42px #00000014}.icon{width:76px;height:76px;display:grid;place-items:center;border-radius:22px;background:#12121208}.icon svg{width:35px;height:35px;fill:none;stroke:#121212;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}.card span{font-size:18px;font-weight:700;text-align:center}@media(max-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}@media(max-width:600px){.nav{justify-content:center}.links{order:3;width:100%;justify-content:center}.support{padding-top:64px}.grid{grid-template-columns:repeat(2,1fr);gap:14px}.card{min-height:180px}}
+</style>
+<style>
+.nav{display:grid;grid-template-columns:1fr auto 1fr;justify-items:stretch;max-width:1600px;margin:0 auto}.logo{justify-self:start}.links{justify-self:center}.icons{justify-self:end}.links a,.icons a{transition:transform .25s ease,background .25s ease,opacity .25s ease}.links a:hover,.icons a:hover{transform:translateY(-2px);opacity:1}@media(max-width:600px){.nav{justify-items:center}.logo,.links,.icons{justify-self:center}}
+</style>
+<style>
+.support{padding:0 5vw 96px;background:linear-gradient(180deg,#f5f5f5 0%,#fff 420px);min-height:0}
+.support-hero{max-width:1180px;margin:0 auto;padding:82px 0 56px;text-align:center}
+.support-kicker{margin:0 0 14px;color:#647d22;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+.support-hero h1{margin:0 auto 16px;font-size:clamp(38px,6vw,66px);line-height:1.06;font-weight:700;letter-spacing:0}
+.support-hero>p:not(.support-kicker){max-width:620px;margin:0 auto 28px;color:#616161;font-size:16px;line-height:1.7}
+.support-search{position:relative;max-width:650px;margin:0 auto;text-align:left}
+.support-search label{display:block;margin:0 0 8px;font-size:13px;font-weight:700}
+.support-search input{width:100%;height:58px;padding:0 20px 0 54px;border:1px solid #d3d3d3;border-radius:8px;background:#fff;color:#171717;font:inherit;font-size:15px;box-shadow:0 10px 26px #0000000c}
+.support-search input:focus,.request-form input:focus,.request-form select:focus,.request-form textarea:focus{outline:3px solid #c7ff4266;border-color:#6d8e19}
+.support-search svg{position:absolute;left:18px;bottom:18px;width:22px;height:22px;fill:none;stroke:#555;stroke-width:1.8;stroke-linecap:round}
+.support-shortcuts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;max-width:1180px;margin:0 auto 80px}
+.support-shortcut{display:flex;align-items:center;gap:14px;min-height:92px;padding:18px;border:1px solid #e2e2e2;border-radius:8px;background:#fff;transition:border-color .2s ease,transform .2s ease,box-shadow .2s ease}
+.support-shortcut:hover{transform:translateY(-3px);border-color:#b5d95a;box-shadow:0 12px 24px #0000000b}
+.support-shortcut-icon{flex:none;width:42px;height:42px;display:grid;place-items:center;border-radius:8px;background:#f2f5e9;color:#35420f}
+.support-shortcut-icon svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.support-shortcut strong,.support-shortcut small{display:block}.support-shortcut strong{font-size:14px}.support-shortcut small{margin-top:4px;color:#707070;font-size:12px;line-height:1.4}
+.support-section{max-width:1180px;margin:0 auto 76px;scroll-margin-top:110px}
+.support-section-heading{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:22px}
+.support-section-heading h2{margin:0;font-size:clamp(25px,3vw,34px);line-height:1.2}
+.support-section-heading p{max-width:520px;margin:0;color:#666;font-size:14px;line-height:1.6}
+.support-info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.support-info{padding:24px;border:1px solid #e2e2e2;border-radius:8px;background:#fff}
+.support-info h3{margin:0 0 10px;font-size:17px}.support-info p,.support-info li{color:#626262;font-size:14px;line-height:1.65}
+.support-info p{margin:0}.support-info ul{margin:12px 0 0;padding-left:18px}
+.support-link{display:inline-flex;align-items:center;gap:8px;margin-top:16px;color:#35420f;font-size:13px;font-weight:700;text-decoration:underline;text-underline-offset:3px}
+.faq-list{border-top:1px solid #ddd}.faq-item{border-bottom:1px solid #ddd}.faq-item summary{position:relative;padding:19px 44px 19px 0;cursor:pointer;list-style:none;font-size:15px;font-weight:700}.faq-item summary::-webkit-details-marker{display:none}.faq-item summary:after{content:'+';position:absolute;right:8px;top:50%;transform:translateY(-50%);font-size:24px;font-weight:400}.faq-item[open] summary:after{content:'−'}.faq-item p{max-width:850px;margin:0;padding:0 36px 20px 0;color:#626262;font-size:14px;line-height:1.7}.faq-empty{padding:24px 0;color:#666;font-size:14px}
+.request-layout{display:grid;grid-template-columns:.8fr 1.2fr;gap:42px;padding:32px;border-radius:8px;background:#171717;color:#fff}.request-copy h2{margin:0 0 12px;font-size:30px}.request-copy p{color:#ccc;font-size:14px;line-height:1.7}.request-copy a{color:#c7ff42}.request-form{display:grid;grid-template-columns:1fr 1fr;gap:14px}.request-form label{display:block;margin-bottom:6px;font-size:12px;font-weight:700}.request-form input,.request-form select,.request-form textarea{width:100%;min-height:44px;padding:10px 12px;border:1px solid #555;border-radius:5px;background:#252525;color:#fff;font:inherit;font-size:14px}.request-form textarea{min-height:106px;resize:vertical}.request-form .full{grid-column:1/-1}.request-form button{justify-self:start;min-height:44px;padding:0 20px;border:0;border-radius:5px;background:#c7ff42;color:#171717;font:inherit;font-size:13px;font-weight:700;cursor:pointer}.request-note{grid-column:1/-1;margin:0;color:#bcbcbc;font-size:12px;line-height:1.5}
+.support-footer-note{max-width:1180px;margin:0 auto;padding-top:24px;border-top:1px solid #e2e2e2;color:#777;font-size:12px;line-height:1.6}
+@media(max-width:850px){.support-shortcuts{grid-template-columns:repeat(2,1fr)}.support-info-grid{grid-template-columns:1fr}.request-layout{grid-template-columns:1fr;gap:20px}.support-section-heading{align-items:flex-start;flex-direction:column}}
+@media(max-width:560px){.support{padding-right:20px;padding-left:20px}.support-hero{padding:58px 0 40px}.support-hero>p:not(.support-kicker){font-size:14px}.support-shortcuts{gap:10px;margin-bottom:62px}.support-shortcut{align-items:flex-start;flex-direction:column;min-height:132px;padding:14px}.support-shortcut strong{font-size:13px}.support-shortcut small{font-size:11px}.support-section{margin-bottom:58px}.request-layout{padding:22px 18px}.request-form{grid-template-columns:1fr}.request-form .full,.request-note{grid-column:1}}
+</style>
+<script src="script.js" defer></script>
+</head>
+<body>
+<nav class="nav"><a class="logo" href="index.html#home"><img src="https://api.builder.io/api/v1/image/assets/TEMP/e6c945767a5681d61829a3bef76d5b52b71cf7fb?width=149" alt="Ambatron logo"></a><div class="links"><a href="index.html#home">Home</a><a href="drones.html">Drones</a><a href="about.html">About</a><a href="support.html">Support</a></div><div class="icons"><a href="#" aria-label="Search"><svg viewBox="0 0 24 24"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg></a><a href="#" aria-label="Cart"><svg viewBox="0 0 24 24"><path d="M3 4h2l2 11h11l2-7H6"/><circle cx="9" cy="20" r="1"/><circle cx="18" cy="20" r="1"/></svg></a><a href="#" aria-label="Account"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M5 21a7 7 0 0 1 14 0"/></svg></a></div></nav>
+<main class="support">
+	<section class="support-hero" aria-labelledby="support-title">
+		<p class="support-kicker">Ambatron customer care</p>
+		<h1 id="support-title">How can we help?</h1>
+		<p>Find answers, get your drone back in the air, or send our support team the details they need to help.</p>
+		<div class="support-search">
+			<label for="faq-search">Search common questions</label>
+			<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"/><path d="m16 16 5 5"/></svg>
+			<input id="faq-search" type="search" placeholder="Try “battery”, “pairing” or “repair”" autocomplete="off">
+		</div>
+	</section>
+
+	<nav class="support-shortcuts" aria-label="Support topics">
+		<a class="support-shortcut" href="#troubleshooting"><span class="support-shortcut-icon"><svg viewBox="0 0 24 24"><path d="M12 3a8 8 0 0 0-4.8 14.4c.5.4.8 1 .8 1.6h8c0-.6.3-1.2.8-1.6A8 8 0 0 0 12 3Z"/><path d="M9 22h6m-5-7 2-3 2 2 2-3"/></svg></span><span><strong>Troubleshooting</strong><small>Fix common flight and setup issues</small></span></a>
+		<a class="support-shortcut" href="#repairs"><span class="support-shortcut-icon"><svg viewBox="0 0 24 24"><path d="M14.5 6.5a5 5 0 0 0-6.6 6.6L3 18l3 3 4.9-4.9a5 5 0 0 0 6.6-6.6L14 13l-3-3 3.5-3.5Z"/></svg></span><span><strong>Repairs &amp; care</strong><small>Prepare for a service request</small></span></a>
+		<a class="support-shortcut" href="#downloads"><span class="support-shortcut-icon"><svg viewBox="0 0 24 24"><path d="M12 3v12m-5-5 5 5 5-5M4 20h16"/></svg></span><span><strong>Manuals &amp; downloads</strong><small>Find the right files for your model</small></span></a>
+		<a class="support-shortcut" href="#contact"><span class="support-shortcut-icon"><svg viewBox="0 0 24 24"><path d="M4 5h16v14H4z"/><path d="m4 7 8 6 8-6"/></svg></span><span><strong>Contact support</strong><small>Tell us what is happening</small></span></a>
+	</nav>
+
+	<section class="support-section" id="troubleshooting">
+		<div class="support-section-heading"><h2>Start with the essentials</h2><p>A few quick checks solve many first-flight and connection problems.</p></div>
+		<div class="support-info-grid">
+			<article class="support-info"><h3>Before your first flight</h3><p>Charge the aircraft and controller, install the compatible flight app, and complete setup outdoors in an open area.</p><ul><li>Remove the gimbal cover before powering on.</li><li>Check propellers for cracks or looseness.</li><li>Wait for a strong positioning signal before takeoff.</li></ul></article>
+			<article class="support-info"><h3>Connection or pairing trouble?</h3><p>Restart the aircraft and controller, confirm the app and firmware are current, then follow the pairing sequence for your model.</p><a class="support-link" href="#faq">See connection answers <span aria-hidden="true">&#8594;</span></a></article>
+			<article class="support-info"><h3>Battery not charging?</h3><p>Use the supplied charger, let a hot or cold battery return to room temperature, and inspect the charging contacts for dirt or damage.</p><a class="support-link" href="#faq">See battery answers <span aria-hidden="true">&#8594;</span></a></article>
+		</div>
+	</section>
+
+	<section class="support-section" id="repairs">
+		<div class="support-section-heading"><h2>Repairs &amp; service</h2><p>Gathering a few details first helps a service team understand the issue sooner.</p></div>
+		<div class="support-info-grid">
+			<article class="support-info"><h3>1. Make the aircraft safe</h3><p>Power it off, remove the battery if it is safe to do so, and do not charge a swollen, wet, or visibly damaged battery.</p></article>
+			<article class="support-info"><h3>2. Collect the details</h3><p>Note your model, serial number, purchase date, and what happened. Photos or a short video can help explain visible damage.</p></article>
+			<article class="support-info"><h3>3. Keep your accessories</h3><p>Back up footage and settings. Do not ship batteries or accessories unless the service team asks you to.</p></article>
+		</div>
+	</section>
+
+	<section class="support-section" id="downloads">
+		<div class="support-section-heading"><h2>Manuals, software &amp; product care</h2><p>Choose files and service information by the exact product model to avoid installing the wrong version.</p></div>
+		<div class="support-info-grid">
+			<article class="support-info"><h3>Find your model and serial number</h3><p>Check the product label, original packaging, or the device information screen in the flight app. Include the model name when searching for help.</p></article>
+			<article class="support-info"><h3>Manuals and firmware</h3><p>Use the official product page or the app associated with your model for its user guide, firmware, and release notes. Confirm the model and region before updating.</p></article>
+			<article class="support-info"><h3>Ambatron Care</h3><p>Have your proof of purchase and product serial number ready when checking coverage. Available service options can depend on product and region.</p></article>
+		</div>
+	</section>
+
+	<section class="support-section" id="faq">
+		<div class="support-section-heading"><h2>Frequently asked questions</h2><p>Search above to narrow these answers. Open a question to read more.</p></div>
+		<div class="faq-list" id="faq-list">
+			<details class="faq-item"><summary>Why will my drone not connect to the controller?</summary><p>Charge both devices, ensure you are using the controller intended for your model, and restart the aircraft, controller, and app. If they still do not pair, follow the model-specific pairing instructions in its user guide.</p></details>
+			<details class="faq-item"><summary>What should I do if the battery will not charge?</summary><p>Use the recommended charger and check that the contacts are clean and dry. Let a battery that is very hot or cold return to room temperature. Stop using it if it is swollen, leaking, unusually hot, or damaged.</p></details>
+			<details class="faq-item"><summary>How do I update firmware safely?</summary><p>Check the product's official app or support materials for the latest compatible firmware. Charge the aircraft and controller, keep them powered and near each other during the update, and do not interrupt the process.</p></details>
+			<details class="faq-item"><summary>Where can I find my serial number?</summary><p>Look for a product label on the aircraft or packaging, or check the device information screen in the flight app. The exact location varies by model.</p></details>
+			<details class="faq-item"><summary>What information should I include in a repair request?</summary><p>Include the model and serial number, purchase date, a clear description of the issue, any app error messages, and photos of visible damage. Never send a damaged battery unless the service team gives safe shipping instructions.</p></details>
+			<details class="faq-item"><summary>Can I fly while an app or firmware update is available?</summary><p>For the safest and most predictable operation, review the release notes and install required updates before flying. Do not begin an update when you need the aircraft immediately; keep it stationary until the update completes.</p></details>
+		</div>
+		<p class="faq-empty" id="faq-empty" hidden>No matching questions. Try another search or send us a support request.</p>
+	</section>
+
+	<section class="support-section request-layout" id="contact">
+		<div class="request-copy"><p class="support-kicker">We're here to help</p><h2>Still need a hand?</h2><p>Share what you have tried and include your product details. Submitting opens your email app with a message ready to review; it will not send until you press Send there.</p><p>For safety concerns, stop using the aircraft and battery until the issue has been checked.</p></div>
+		<form class="request-form" id="support-request">
+			<div><label for="request-name">Your name</label><input id="request-name" name="name" autocomplete="name" required></div>
+			<div><label for="request-email">Your email</label><input id="request-email" name="email" type="email" autocomplete="email" required></div>
+			<div><label for="request-model">Product model</label><input id="request-model" name="model" placeholder="For example, aircraft model"></div>
+			<div><label for="request-topic">What do you need help with?</label><select id="request-topic" name="topic"><option>Setup and connection</option><option>Battery or charging</option><option>Repair or damage</option><option>App or firmware</option><option>Order or warranty</option><option>Other</option></select></div>
+			<div class="full"><label for="request-message">Describe the issue</label><textarea id="request-message" name="message" required placeholder="What happened, and what have you tried so far?"></textarea></div>
+			<button type="submit">Prepare support email</button>
+			<p class="request-note">This opens a draft in your default email app. Do not include passwords or payment details.</p>
+		</form>
+	</section>
+	<p class="support-footer-note">For flight safety, follow local aviation rules and the safety guidance included with your product. Product features, support availability, and service coverage can vary by model and region.</p>
+</main>
+<footer class="site-footer">
+	<div class="site-footer__inner">
+		<div class="site-footer__app"><h2>Only in the Ambatron Store App</h2><p>Explore new aerial tools and manage your devices in one place.</p><a class="site-footer__button" href="#">Download App</a></div>
+		<div class="site-footer__columns"><div class="site-footer__column"><h3>Product Categories</h3><a href="drones.html">Consumer</a><a href="drones.html">Professional</a><a href="drones.html">Enterprise</a><a href="drones.html">Components</a><h3>Service Plans</h3><a href="support.html">Ambatron Care</a><a href="support.html">Maintenance</a></div><div class="site-footer__column"><h3>Where to Buy</h3><a href="#">Ambatron Online Store</a><a href="#">Flagship Stores</a><a href="#">Retail Stores</a><a href="#">Dealer Network</a><h3>Cooperation</h3><a href="#">Become a Dealer</a></div><div class="site-footer__column"><h3>Fly Safe</h3><a href="#">Fly Safe</a><a href="#">Flying Tips</a><h3>Support</h3><a href="support.html">Product Support</a><a href="support.html">Help Center</a><a href="support.html">Download Center</a></div><div class="site-footer__column"><h3>Explore</h3><a href="about.html">About Ambatron</a><a href="drones.html">Buying Guides</a><a href="#">Trust Center</a><a href="#">Ambatron Blog</a><h3>Trending Now</h3><a href="drones.html">Camera Drones</a></div><div class="site-footer__column"><h3>Community</h3><a href="#">Ambatron Community</a><a href="#">Forum</a><a href="#">Developer</a><h3>Subscribe</h3><a href="#">Get the latest news from Ambatron</a></div></div>
+		<div class="site-footer__bottom"><div class="site-footer__brand">amba</div><div class="site-footer__bottom-links"><a href="#">Who We Are</a><a href="#">Contact Us</a><a href="#">Careers</a><a href="support.html">Support</a></div><div class="site-footer__socials"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="X">x</a><a href="#" aria-label="YouTube">▶</a><a href="#" aria-label="Instagram">◎</a></div></div><div class="site-footer__legal"><span>Privacy Policy</span><span>•</span><span>Terms of Use</span><span>•</span><span>Accessibility</span><span>•</span><span>Cookie Preferences</span><span>•</span><span>Copyright © 2026 Ambatron</span></div>
+	</div>
+</footer>
+</body>
+</html>

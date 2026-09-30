@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Login | Ambatron</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+<style>
+.login-page{min-height:100vh;display:grid;place-items:center;padding:32px 5vw;color:#fff;background:#111}.login-shell{display:grid;grid-template-columns:1.05fr .95fr;width:min(1120px,100%);min-height:650px;overflow:hidden;border:1px solid #fff2;background:#1b1b1b;box-shadow:0 28px 80px #0008}.login-intro{position:relative;display:flex;align-items:flex-end;padding:clamp(40px,6vw,82px);overflow:hidden;background:linear-gradient(145deg,#232323 0%,#39421e 100%)}.login-intro:before{content:'';position:absolute;width:460px;height:460px;right:-180px;top:-150px;border:1px solid #c7ff4266;border-radius:50%;box-shadow:0 0 0 48px #c7ff4210,0 0 0 96px #c7ff4208}.login-intro:after{content:'';position:absolute;right:-5%;bottom:7%;width:78%;height:35%;opacity:.8;background:repeating-linear-gradient(135deg,transparent 0 34px,#c7ff4233 35px 37px,transparent 38px 70px);transform:skewY(-15deg)}.intro-content{position:relative;z-index:1;max-width:470px}.eyebrow{margin:0 0 20px;color:#c7ff42;font-size:12px;font-weight:800;letter-spacing:.18em;text-transform:uppercase}.login-intro h1{margin:0;font-size:clamp(48px,6vw,88px);line-height:.9;letter-spacing:-.05em}.intro-copy{max-width:390px;margin:28px 0 0;color:#c9c9c2;line-height:1.5}.login-form-panel{display:flex;align-items:center;padding:clamp(34px,6vw,82px);color:#171717;background:#f3f1eb}.form-wrap{width:100%;max-width:360px;margin:auto}.form-wrap h2{margin:0 0 10px;font-size:clamp(28px,4vw,42px);line-height:1;letter-spacing:-.04em}.form-subtitle{margin:0 0 34px;color:#73736d;font-size:14px;line-height:1.5}.field{position:relative;margin-bottom:18px}.field label{display:block;margin-bottom:8px;color:#73736d;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}.field input{width:100%;padding:15px 16px;border:1px solid #1717172b;border-radius:4px;outline:0;color:#171717;background:#fff9;font:inherit;transition:border-color .2s,box-shadow .2s}.field input:focus{border-color:#171717;box-shadow:0 0 0 3px #c7ff4266}.password-toggle{position:absolute;right:8px;bottom:8px;padding:7px;border:0;color:#73736d;background:transparent;cursor:pointer;font:inherit;font-size:11px;font-weight:700}.form-options{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:22px 0 28px;font-size:12px}.remember{display:flex;align-items:center;gap:8px;color:#73736d}.remember input{accent-color:#171717}.form-options a{color:#171717;text-decoration:underline;text-underline-offset:3px}.login-button{width:100%;padding:15px;border:1px solid #171717;border-radius:3px;color:#f3f1eb;background:#171717;cursor:pointer;font:inherit;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;transition:background .2s,color .2s,transform .2s}.login-button:hover{color:#171717;background:#c7ff42;transform:translateY(-2px)}.form-message{min-height:20px;margin:16px 0 0;color:#596c25;font-size:12px;text-align:center}.back-link{display:inline-block;margin-top:28px;color:#73736d;font-size:12px}.back-link:hover{color:#171717}@media(max-width:760px){.login-page{padding:0}.login-shell{grid-template-columns:1fr;min-height:100vh;border:0}.login-intro{min-height:330px;padding:42px 8vw}.login-intro h1{font-size:clamp(45px,13vw,70px)}.login-form-panel{padding:52px 8vw 64px}.intro-copy{margin-top:20px}.login-intro:after{bottom:-6%;width:100%}}
+</style>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+.login-page{color:#171717!important;background:#fff!important;font-family:'Manrope',sans-serif!important}
+.login-shell{border:1px solid #17171714!important;background:#fff!important;box-shadow:0 24px 70px #17171712!important}
+.login-intro{color:#171717!important;background:#fff!important;border-right:1px solid #17171712}
+.login-intro:before{border-color:#9abf2e66!important;box-shadow:0 0 0 48px #9abf2e0d,0 0 0 96px #9abf2e07!important}
+.login-intro:after{background:repeating-linear-gradient(135deg,transparent 0 34px,#9abf2e35 35px 37px,transparent 38px 70px)!important}
+.login-intro h1,.form-wrap h2{font-family:'Space Grotesk','Manrope',sans-serif!important;font-weight:600!important}
+.login-intro .eyebrow{color:#c7ff42!important}
+.intro-copy{color:#fff9!important}
+.login-form-panel{color:#171717!important;background:#fff!important}
+.login-form-panel{background:url('https://account.djicdn.com/img/banner-04.acb127a8.webp') center/cover!important}
+.login-form-panel{position:relative!important}
+.login-form-panel .form-wrap{padding:34px!important;background:transparent!important;backdrop-filter:blur(18px) saturate(1.15)!important;-webkit-backdrop-filter:blur(18px) saturate(1.15)!important;box-shadow:none!important}
+.login-page{background:url('https://account.djicdn.com/img/banner-04.acb127a8.webp') center/cover fixed!important}
+.login-shell{background:transparent!important}
+.login-intro,.login-form-panel{background:transparent!important}
+.login-shell,.login-form-panel,.login-form-panel .form-wrap{background:transparent!important;background-image:none!important}
+.field input{background:rgba(255,255,255,.18)!important;backdrop-filter:blur(8px)!important;-webkit-backdrop-filter:blur(8px)!important}
+.login-page{background:url('https://account.djicdn.com/img/banner-04.acb127a8.webp') center/cover fixed!important}
+.login-shell,.login-intro,.login-form-panel,.login-form-panel .form-wrap{background:#fff!important;background-image:none!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.field input{background:#fafaf8!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}
+.login-page{background:#fff!important}
+.login-shell{background:#fff!important}
+.login-intro,.login-form-panel{background:transparent!important;background-image:none!important}
+.login-form-panel .form-wrap{background:#fff!important}
+.login-intro .intro-content{width:100%}
+.login-visual{display:block;width:100%;height:170px;margin:0 0 30px;object-fit:cover;border-radius:4px}
+.field input{border-color:#17171720!important;background:#fafaf8!important}
+.login-button{color:#fff!important;background:#171717!important}
+.login-button:hover{color:#171717!important;background:#c7ff42!important}
+.back-link{font-size:16px!important;font-weight:600!important}
+.login-page{background:#fff!important}
+.login-shell{background:#fff!important}
+.login-intro{background:#fff!important}
+.login-form-panel{background:linear-gradient(135deg,rgba(255,255,255,.86),rgba(255,255,255,.62)),url('https://account.djicdn.com/img/banner-04.acb127a8.webp') center/cover!important}
+.login-form-panel .form-wrap{background:rgba(255,255,255,.9)!important}
+.field input{background:transparent!important;background-color:transparent!important;border-color:rgba(23,23,23,.35)!important;color:#171717!important}
+.login-intro{color:#fff!important;background:linear-gradient(135deg,rgba(17,17,17,.72),rgba(17,17,17,.18)),url('https://account.djicdn.com/img/banner-04.acb127a8.webp') center/cover!important}
+.login-intro{align-items:center!important;padding-top:0!important;padding-bottom:0!important}
+.login-form-panel{background:#fff!important;background-image:none!important;color:#171717!important}
+.login-form-panel .form-wrap{background:transparent!important}
+.login-brand{display:block;width:96px;height:auto;margin:0 0 30px;filter:invert(1)}
+.register-link{display:block;margin:24px 0 0;color:#171717;font-size:13px;font-weight:700;text-align:center;text-decoration:underline;text-underline-offset:4px}.register-link:hover{color:#718f1e}
+.social-divider{display:flex;align-items:center;gap:12px;margin:28px 0 16px;color:#8a8a84;font-size:10px;letter-spacing:.12em;text-transform:uppercase}.social-divider:before,.social-divider:after{content:'';height:1px;flex:1;background:#17171720}.platform-options{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}.platform-button{display:flex;align-items:center;justify-content:center;gap:7px;padding:11px 8px;border:1px solid #1717172b;border-radius:3px;color:#171717;background:transparent;cursor:pointer;font:inherit;font-size:11px;font-weight:700;transition:background .2s,border-color .2s,transform .2s}.platform-button:hover{border-color:#171717;background:#17171708;transform:translateY(-2px)}.platform-button svg{width:15px;height:15px;fill:currentColor}
+</style>
+</head>
+<body>
+<main class="login-page">
+  <section class="login-shell" aria-label="Ambatron login">
+    <div class="login-intro"><div class="intro-content"><p class="eyebrow">Ambatron / Member access</p><h1>WELCOME<br>BACK.</h1><p class="intro-copy">Return to your flight desk and keep every perspective within reach.</p></div></div>
+    <div class="login-form-panel"><div class="form-wrap"><img class="login-brand" src="amba-logo.svg" alt="Amba logo"><h2>Sign in</h2><p class="form-subtitle">Use your Ambatron account to continue.</p><form id="login-form"><div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required></div><div class="field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required><button class="password-toggle" type="button" id="password-toggle" aria-label="Show password">Show</button></div><div class="form-options"><label class="remember"><input type="checkbox" name="remember"> Remember me</label><a href="#forgot">Forgot password?</a></div><button class="login-button" type="submit">Log in</button><p class="form-message" id="form-message" role="status" aria-live="polite"></p></form><div class="social-divider">or continue with</div><div class="platform-options"><button class="platform-button" type="button" data-platform="Google"><svg viewBox="0 0 24 24"><path d="M21.35 12.27c0-.72-.06-1.42-.18-2.09H12v3.96h5.24a4.48 4.48 0 0 1-1.94 2.94v2.45h3.14c1.84-1.7 2.91-4.2 2.91-7.26Z"/><path d="M12 21.5c2.63 0 4.84-.87 6.45-2.36l-3.14-2.45c-.87.58-1.98.93-3.31.93-2.54 0-4.69-1.72-5.46-4.03H3.3v2.53A9.74 9.74 0 0 0 12 21.5Z"/><path d="M6.54 13.59A5.85 5.85 0 0 1 6.23 12c0-.55.11-1.09.31-1.59V7.88H3.3A9.74 9.74 0 0 0 2.25 12c0 1.57.38 3.05 1.05 4.12l3.24-2.53Z"/><path d="M12 6.38c1.44 0 2.73.5 3.74 1.49l2.8-2.8C16.84 3.42 14.63 2.5 12 2.5a9.74 9.74 0 0 0-8.7 5.38l3.24 2.53C7.31 8.1 9.46 6.38 12 6.38Z"/></svg>Google</button><button class="platform-button" type="button" data-platform="Apple"><svg viewBox="0 0 24 24"><path d="M16.7 12.8c0-2.1 1.7-3.1 1.8-3.2a4 4 0 0 0-3.1-1.7c-1.3-.1-2.5.8-3.1.8-.7 0-1.7-.8-2.8-.8a4.2 4.2 0 0 0-3.5 2.1c-1.5 2.6-.4 6.5 1.1 8.6.8 1 1.6 2.2 2.8 2.1 1.1 0 1.6-.7 2.9-.7s1.7.7 2.9.7c1.2 0 2-1 2.7-2.1a8.5 8.5 0 0 0 1.2-2.4 3.7 3.7 0 0 1-2.9-3.4ZM14.7 6.6a3.7 3.7 0 0 0 .8-2.7 3.8 3.8 0 0 0-2.5 1.3 3.5 3.5 0 0 0-.8 2.6 3.1 3.1 0 0 0 2.5-1.2Z"/></svg>Apple</button><button class="platform-button" type="button" data-platform="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v4h4v-4h3l1-4h-4V9c0-.7.3-1 1-1Z"/></svg>Facebook</button></div><a class="back-link" href="index.html">Back to Ambatron</a></div></div>
+  </section>
+</main>
+<script>
+const password=document.getElementById('password');
+const toggle=document.getElementById('password-toggle');
+const form=document.getElementById('login-form');
+const message=document.getElementById('form-message');
+const title=document.querySelector('.form-wrap h2');
+const subtitle=document.querySelector('.form-subtitle');
+const submit=form.querySelector('.login-button');
+const registerLink=document.createElement('a');
+let mode='login';
+toggle.addEventListener('click',()=>{const visible=password.type==='text';password.type=visible?'password':'text';toggle.textContent=visible?'Show':'Hide';toggle.setAttribute('aria-label',visible?'Show password':'Hide password')});
+document.querySelector('.social-divider')?.remove();
+document.querySelector('.platform-options')?.remove();
+const forgotLink=document.querySelector('.form-options a');
+forgotLink?.remove();
+registerLink.className='register-link';
+registerLink.href='#register';
+registerLink.textContent='Create an account';
+document.querySelector('.form-wrap').insertBefore(registerLink,document.querySelector('.back-link'));
+registerLink.addEventListener('click',event=>{event.preventDefault();mode=mode==='login'?'register':'login';title.textContent=mode==='login'?'Sign in':'Create account';subtitle.textContent=mode==='login'?'Use your Ambatron account to continue.':'Create a local demo account for this browser.';submit.textContent=mode==='login'?'Log in':'Create account';password.autocomplete=mode==='login'?'current-password':'new-password';password.minLength=mode==='register'?8:0;registerLink.textContent=mode==='login'?'Create an account':'Back to sign in';message.textContent=''});
+if(window.location.hash==='#register')registerLink.click();
+const hashPassword=async(value,salt)=>{if(!window.crypto?.subtle)throw new Error('Secure password storage is unavailable. Open this page from localhost to use demo accounts.');const saltBytes=salt?Uint8Array.from(salt.match(/.{2}/g),byte=>parseInt(byte,16)):window.crypto.getRandomValues(new Uint8Array(16));const key=await window.crypto.subtle.importKey('raw',new TextEncoder().encode(value),'PBKDF2',false,['deriveBits']);const bits=await window.crypto.subtle.deriveBits({name:'PBKDF2',salt:saltBytes,iterations:120000,hash:'SHA-256'},key,256);return{salt:[...saltBytes].map(byte=>byte.toString(16).padStart(2,'0')).join(''),hash:[...new Uint8Array(bits)].map(byte=>byte.toString(16).padStart(2,'0')).join('')}};
+form.addEventListener('submit',async event=>{event.preventDefault();message.textContent='';if(!form.reportValidity())return;const email=form.elements.email.value.trim().toLowerCase();let accounts={};try{accounts=JSON.parse(localStorage.getItem('amba-accounts')||'{}')}catch{}if(mode==='register'){if(accounts[email]){message.textContent='An account with this email already exists in this browser.';return}accounts[email]=await hashPassword(password.value).catch(error=>{message.textContent=error.message;return null});if(!accounts[email])return;localStorage.setItem('amba-accounts',JSON.stringify(accounts));message.textContent='Account created. You are signed in on this browser.'}else{if(!accounts[email]){message.textContent='Email or password is incorrect.';return}const attempt=await hashPassword(password.value,accounts[email].salt).catch(error=>{message.textContent=error.message;return null});if(!attempt)return;if(accounts[email].hash!==attempt.hash){message.textContent='Email or password is incorrect.';return}message.textContent='Signed in successfully.'}localStorage.setItem('amba-session',email)});
+</script>
+</body>
+</html>

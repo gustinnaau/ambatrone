@@ -1,0 +1,785 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ambatron 4</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+ :root {
+   --black: #121212;
+   --white: #ffffff;
+   --glass-bg: rgba(255, 255, 255, 0.20);
+   --glass-border: rgba(255, 255, 255, 0.30);
+   --glass-blur: blur(6px);
+   --max-width: 1440px;
+ }
+
+ * { box-sizing: border-box; margin: 0; padding: 0; }
+
+ body {
+   font-family: 'Mona Sans', 'Manrope', -apple-system, Roboto, Helvetica, sans-serif;
+   color: var(--white);
+   background: var(--white);
+   overflow-x: hidden;
+ }
+
+ html { scroll-behavior: smooth; }
+
+ img, svg { display: block; max-width: 100%; }
+
+ a { color: inherit; text-decoration: none; }
+
+ .container {
+   max-width: var(--max-width);
+   margin: 0 auto;
+   padding: 0 5vw;
+ }
+
+ /* ---------- HERO ---------- */
+ .hero {
+   position: relative;
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   overflow: hidden;
+   background: #0b0b0b;
+ }
+
+ .hero__bg {
+   position: absolute;
+   inset: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   z-index: 0;
+ }
+
+ /* Nav */
+ .nav {
+   position: relative;
+   z-index: 5;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: 1.5rem;
+   flex-wrap: wrap;
+   padding: 20px 5vw;
+   background: #121212;
+   transition: transform 0.35s ease, box-shadow 0.35s ease;
+ }
+
+ .nav {
+   display: grid;
+   grid-template-columns: 1fr auto 1fr;
+   align-items: center;
+   max-width: 1600px;
+   margin: 0 auto;
+ }
+
+ .nav__logo { justify-self: start; }
+ .nav__links { justify-self: center; }
+ .nav__icons { justify-self: end; }
+ .nav__links a,
+ .nav__icons a {
+   transition: transform 0.25s ease, background 0.25s ease, opacity 0.25s ease;
+ }
+
+ .nav__links a:hover,
+ .nav__icons a:hover {
+   transform: translateY(-2px);
+   opacity: 1;
+ }
+
+ .nav__icons a {
+   width: 44px;
+   height: 44px;
+ }
+
+ .nav__logo img {
+   width: 75px;
+   height: auto;
+   filter: drop-shadow(0 8px 14px rgba(0,0,0,0.2));
+ }
+
+ .nav__logo a {
+   display: block;
+   cursor: pointer;
+ }
+
+ .nav__links {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   gap: clamp(16px, 3vw, 40px);
+   padding: 12px 28px;
+   border-radius: 50px;
+   border: 1px solid rgba(255,255,255,0.26);
+   background: rgba(255,255,255,0.12);
+   backdrop-filter: blur(18px) saturate(1.2);
+   -webkit-backdrop-filter: blur(18px) saturate(1.2);
+   box-shadow: inset 0 1px 0 rgba(255,255,255,0.18), 0 10px 30px rgba(0,0,0,0.12);
+   flex-wrap: wrap;
+ }
+
+ .nav__links a {
+   font-size: 15px;
+   font-weight: 600;
+   text-transform: uppercase;
+   line-height: 22px;
+   white-space: nowrap;
+   letter-spacing: 0.08em;
+   opacity: 0.92;
+   transition: transform 0.25s ease, opacity 0.25s ease;
+ }
+
+ .nav__links a:hover,
+ .nav__icons a:hover,
+ .feature-card:hover,
+ .product-card:hover,
+ .services__box:hover,
+ .shop-now-btn:hover,
+ .learn-more:hover,
+ .fuad__link:hover {
+   transform: translateY(-2px);
+ }
+
+ .nav__icons {
+   display: flex;
+   align-items: center;
+   gap: 16px;
+ }
+
+ .nav__icons a {
+   position: relative;
+   width: 46px;
+   height: 46px;
+   border-radius: 50%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   border: 1px solid rgba(255,255,255,0.26);
+   background: rgba(255,255,255,0.10);
+   backdrop-filter: blur(14px);
+   -webkit-backdrop-filter: blur(14px);
+   box-shadow: inset 0 1px 0 rgba(255,255,255,0.16), 0 8px 20px rgba(0,0,0,0.08);
+   transition: transform 0.25s ease, background 0.25s ease;
+ }
+
+ .nav__icons svg { width: 20px; height: 20px; fill: var(--white); }
+
+ /* Hero content */
+ .hero__content {
+   position: relative;
+   z-index: 3;
+   flex: 1;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   text-align: center;
+   padding: 2rem 5vw 0;
+ }
+
+ .hero__eyebrow {
+   font-size: clamp(16px, 2vw, 28px);
+   font-weight: 500;
+   text-transform: uppercase;
+   letter-spacing: 0.02em;
+ }
+
+ .hero__title {
+   font-family: 'Anton', sans-serif;
+   font-weight: 400;
+   text-transform: uppercase;
+   font-size: clamp(60px, 16vw, 246px);
+   line-height: 1;
+   opacity: 0.7;
+   background: linear-gradient(180deg, #fff 0%, rgba(255,255,255,0) 100%);
+   -webkit-background-clip: text;
+   background-clip: text;
+   -webkit-text-fill-color: transparent;
+   margin-top: -0.5rem;
+ }
+
+ .hero__drone {
+   position: relative;
+   z-index: 2;
+   width: min(90%, 1000px);
+   margin: -8vw auto -4vw;
+   filter: drop-shadow(0 26px 32px rgba(0,0,0,0.30));
+   transition: transform 0.3s ease, filter 0.3s ease;
+ }
+
+ @keyframes droneFloat {
+   0%, 100% { transform: translateY(0px); }
+   50% { transform: translateY(-10px); }
+ }
+
+ /* Product heading + feature row */
+ .hero__product {
+   position: relative;
+   z-index: 3;
+   text-align: center;
+   font-weight: 700;
+   font-size: clamp(24px, 3.2vw, 36px);
+   line-height: 1.1;
+   padding: 1rem 1rem 2rem;
+ }
+
+ .feature-row {
+   position: relative;
+   z-index: 3;
+   display: flex;
+   flex-wrap: wrap;
+   align-items: center;
+   justify-content: center;
+   gap: 1.5rem;
+   padding: 0 5vw 4rem;
+ }
+
+ .feature-card {
+   width: 208px;
+   max-width: 42vw;
+   min-height: 140px;
+   border-radius: 16px;
+   border: 1px solid rgba(255,255,255,0.22);
+   background: rgba(255,255,255,0.10);
+   backdrop-filter: blur(16px);
+   -webkit-backdrop-filter: blur(16px);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 0.75rem;
+   padding: 1.5rem 1rem;
+   text-align: center;
+   box-shadow: inset 0 1px 0 rgba(255,255,255,0.14), 0 12px 22px rgba(10,10,20,0.12);
+   transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+ }
+
+ .feature-card svg { width: 44px; height: 44px; fill: var(--white); }
+
+ .feature-card span {
+   font-size: 18px;
+   font-weight: 500;
+   line-height: 1.33;
+ }
+
+ .shop-now-btn {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   padding: 18px 28px;
+   border-radius: 999px;
+   background: rgba(255,255,255,0.96);
+   color: var(--black);
+   font-size: 18px;
+   font-weight: 700;
+   text-transform: uppercase;
+   border: none;
+   cursor: pointer;
+   box-shadow: 0 14px 24px rgba(255,255,255,0.18);
+   transition: transform 0.25s ease, box-shadow 0.25s ease;
+ }
+
+ /* ---------- PRODUCTS SECTION ---------- */
+ .products {
+   padding: 5rem 5vw;
+   text-align: center;
+ }
+
+ .products__title {
+   color: var(--black);
+   font-size: clamp(24px, 3.2vw, 36px);
+   font-weight: 600;
+   margin-bottom: 3rem;
+ }
+
+ .products__grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+   gap: 2rem;
+   max-width: 1300px;
+   margin: 0 auto;
+ }
+
+ .product-card {
+   position: relative;
+   border-radius: 18px;
+   overflow: hidden;
+   aspect-ratio: 117 / 154;
+   transition: transform 0.28s ease, box-shadow 0.28s ease;
+   box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+ }
+
+ .product-card:hover {
+   box-shadow: 0 26px 48px rgba(0,0,0,0.12);
+ }
+
+ .product-card img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   transition: transform 0.4s ease;
+ }
+
+ .product-card:hover img {
+   transform: scale(1.04);
+ }
+
+ .product-card__content {
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 20%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 1.5rem;
+   padding: 0 1.5rem;
+   text-align: center;
+ }
+
+ .product-card__category {
+   font-size: 20px;
+   font-weight: 700;
+   text-transform: uppercase;
+ }
+
+ .product-card__desc {
+   font-size: 16px;
+   font-weight: 400;
+   text-transform: uppercase;
+   max-width: 300px;
+ }
+
+ .learn-more {
+   display: inline-flex;
+   align-items: center;
+   justify-content: center;
+   gap: 8px;
+   padding: 12px 28px;
+   border-radius: 999px;
+   border: 1px solid rgba(255,255,255,0.22);
+   background: rgba(255,255,255,0.08);
+   backdrop-filter: blur(12px);
+   -webkit-backdrop-filter: blur(12px);
+   font-size: 18px;
+   font-weight: 600;
+   color: var(--white);
+   transition: transform 0.25s ease, background 0.25s ease;
+ }
+
+ .learn-more svg { width: 9px; height: 17px; fill: var(--white); }
+
+ /* ---------- FUAD 360 SECTION ---------- */
+ .fuad {
+   position: relative;
+   min-height: 70vh;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   overflow: hidden;
+ }
+
+ .fuad__bg {
+   position: absolute;
+   inset: 0;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   z-index: 0;
+ }
+
+ .fuad__content {
+   position: relative;
+   z-index: 1;
+   text-align: center;
+   color: var(--black);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 0.75rem;
+   padding: 2rem;
+ }
+
+ .fuad__eyebrow {
+   font-size: clamp(16px, 2.4vw, 28px);
+   font-weight: 300;
+   text-transform: uppercase;
+ }
+
+ .fuad__title {
+   font-size: clamp(28px, 4vw, 36px);
+   font-weight: 700;
+ }
+
+ .fuad__tag {
+   font-size: 20px;
+   font-weight: 600;
+ }
+
+ .fuad__link {
+   display: inline-flex;
+   align-items: center;
+   gap: 10px;
+   font-size: clamp(22px, 3vw, 36px);
+   font-weight: 600;
+   color: var(--black);
+   margin-top: 0.5rem;
+   padding: 12px 28px;
+   border: 1px solid rgba(17,17,17,0.12);
+   border-radius: 999px;
+   background: rgba(255,255,255,0.22);
+   backdrop-filter: blur(14px) saturate(1.15);
+   -webkit-backdrop-filter: blur(14px) saturate(1.15);
+   box-shadow: inset 0 1px 0 rgba(255,255,255,0.5), 0 12px 24px rgba(0,0,0,0.08);
+   transition: transform 0.25s ease, opacity 0.25s ease;
+ }
+
+ .fuad__link svg { width: 9px; height: 17px; fill: var(--black); }
+
+ /* ---------- FOOTER / SERVICES SECTION ---------- */
+ .services {
+   padding: 5rem 5vw;
+   background: var(--white);
+ }
+
+ .services__grid {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+   gap: 2rem;
+   max-width: 1300px;
+   margin: 0 auto 2.5rem;
+ }
+
+ .services__box {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 1rem;
+   min-height: 180px;
+   border-radius: 18px;
+   border: 1px solid rgba(17,17,17,0.08);
+   background: rgba(50, 50, 50, 0.06);
+   backdrop-filter: blur(8px);
+   -webkit-backdrop-filter: blur(8px);
+   position: relative;
+   transition: transform 0.25s ease, box-shadow 0.25s ease;
+   box-shadow: 0 16px 30px rgba(0,0,0,0.05);
+   padding: 1.5rem 1rem;
+ }
+
+ .services__box:hover {
+   box-shadow: 0 20px 38px rgba(0,0,0,0.08);
+ }
+
+ .services__icon {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   width: 68px;
+   height: 68px;
+   border-radius: 18px;
+   background: rgba(17, 17, 17, 0.04);
+   color: var(--black);
+ }
+
+ .services__icon svg {
+   width: 32px;
+   height: 32px;
+   stroke: currentColor;
+   fill: none;
+   stroke-width: 1.8;
+   stroke-linecap: round;
+   stroke-linejoin: round;
+ }
+
+ .services__box > span {
+   color: var(--black);
+   font-size: 17px;
+   font-weight: 700;
+   line-height: 1.25;
+   text-align: center;
+ }
+
+ .services__labels {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+   gap: 2rem;
+   max-width: 1300px;
+   margin: 0 auto;
+   text-align: center;
+ }
+
+ .services__labels span {
+   color: var(--black);
+   font-size: clamp(16px, 1.6vw, 24px);
+   font-weight: 600;
+   display: block;
+ }
+
+ @media (max-width: 768px) {
+   .nav { justify-content: center; }
+   .nav__links { order: 3; width: 100%; justify-content: center; }
+    .nav__logo,
+    .nav__links,
+    .nav__icons { justify-self: center; }
+   .hero__drone { margin: -6vw auto -6vw; }
+   .feature-row { gap: 1rem; }
+ }
+
+ .home-page .products,
+ .home-page .fuad {
+   display: none;
+ }
+
+ .home-page .services {
+   display: none;
+ }
+
+ .home-page .nav {
+   background: transparent;
+ }
+</style>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const navIcons = document.querySelector('.nav__icons');
+
+    if (navIcons) {
+      navIcons.innerHTML = `
+        <a href="#" aria-label="Search"><svg viewBox="0 0 24 24"><path d="m21 21-4.3-4.3M10.8 18a7.2 7.2 0 1 1 0-14.4 7.2 7.2 0 0 1 0 14.4Z" fill="none" stroke="white" stroke-width="2"/></svg></a>
+        <a href="#" aria-label="Cart"><svg viewBox="0 0 24 24"><path d="M3 4h2l2.2 11h10.6L20 8H6M10 20a1 1 0 1 1-2 0 1 1 0 0 1 2 0Zm9 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0Z" fill="none" stroke="white" stroke-width="1.8"/></svg></a>
+        <a href="#" aria-label="Account"><svg viewBox="0 0 24 24"><path d="M12 13a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 8a7 7 0 0 1 14 0" fill="none" stroke="white" stroke-width="1.8"/></svg></a>`;
+    }
+
+  });
+</script>
+<script src="script.js" defer></script>
+</head>
+<body class="home-page">
+
+ <!-- ================= HERO ================= -->
+ <section class="hero" id="home">
+   <img class="hero__bg" src="https://api.builder.io/api/v1/image/assets/TEMP/7b55596cdf95235079ccfb686acf3250a69f9056?width=2880" alt="Background" />
+
+   <nav class="nav">
+     <div class="nav__logo">
+       <a href="#home" aria-label="Go to home">
+         <img src="https://api.builder.io/api/v1/image/assets/TEMP/e6c945767a5681d61829a3bef76d5b52b71cf7fb?width=149" alt="Logo" />
+       </a>
+     </div>
+
+     <div class="nav__links">
+      <a href="index.html#home">Home</a>
+      <a href="drones.html">Drones</a>
+      <a href="about.html">About</a>
+      <a href="support.html">Support</a>
+     </div>
+
+     <div class="nav__icons">
+       <a href="#" aria-label="Search">
+         <svg viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <path d="M33.7549 19.2984C33.9322 19.4726 34.0728 19.6794 34.1687 19.907C34.2646 20.1346 34.314 20.3786 34.314 20.625C34.314 20.8714 34.2646 21.1154 34.1687 21.343C34.0728 21.5706 33.9322 21.7774 33.7549 21.9516L24.2237 31.3266C24.0466 31.5008 23.8363 31.639 23.6049 31.7332C23.3735 31.8275 23.1255 31.876 22.875 31.876C22.6245 31.876 22.3765 31.8275 22.1451 31.7332C21.9137 31.639 21.7034 31.5008 21.5263 31.3266C21.3492 31.1524 21.2087 30.9455 21.1129 30.7179C21.017 30.4903 20.9677 30.2464 20.9677 30C20.9677 29.7536 21.017 29.5097 21.1129 29.2821C21.2087 29.0545 21.3492 28.8476 21.5263 28.6734L31.0576 19.2984C31.2346 19.1241 31.4449 18.9858 31.6763 18.8915C31.9077 18.7971 32.1558 18.7485 32.4063 18.7485C32.6568 18.7485 32.9048 18.7971 33.1362 18.8915C33.3677 18.9858 33.5779 19.1241 33.7549 19.2984Z" fill="white"/>
+           <path d="M22.875 7.5C18.3508 7.5 13.9281 8.8196 10.1663 11.2919C6.40457 13.7643 3.47262 17.2783 1.74127 21.3896C0.00991142 25.501 -0.44309 30.025 0.439547 34.3895C1.32218 38.7541 3.50082 42.7632 6.69994 45.9099C9.89907 49.0566 13.975 51.1995 18.4123 52.0677C22.8496 52.9358 27.449 52.4903 31.6289 50.7873C35.8088 49.0843 39.3813 46.2004 41.8949 42.5003C44.4084 38.8002 45.75 34.4501 45.75 30C45.7431 24.0347 43.3308 18.3157 39.0424 14.0976C34.754 9.87954 28.9397 7.50682 22.875 7.5ZM22.875 48.75C19.1048 48.75 15.4193 47.6503 12.2845 45.5901C9.14964 43.5298 6.70635 40.6014 5.26356 37.1753C3.82076 33.7492 3.44326 29.9792 4.17879 26.3421C4.91432 22.7049 6.72985 19.364 9.39579 16.7417C12.0617 14.1195 15.4583 12.3337 19.1561 11.6103C22.8539 10.8868 26.6867 11.2581 30.1699 12.6773C33.6531 14.0964 36.6303 16.4996 38.7249 19.5831C40.8195 22.6665 41.9375 26.2916 41.9375 30C41.9318 34.9711 39.9216 39.737 36.348 43.2521C32.7743 46.7672 27.929 48.7444 22.875 48.75Z" fill="white"/>
+         </svg>
+       </a>
+       <a href="#" aria-label="Cart">
+         <svg viewBox="0 0 45 45" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <path d="M20.75 31C20.75 31.2967 20.662 31.5867 20.4972 31.8334C20.3324 32.08 20.0981 32.2723 19.824 32.3858C19.5499 32.4994 19.2483 32.5291 18.9574 32.4712C18.6664 32.4133 18.3991 32.2704 18.1893 32.0607C17.9796 31.8509 17.8367 31.5836 17.7788 31.2926C17.7209 31.0017 17.7506 30.7001 17.8642 30.426C17.9777 30.1519 18.17 29.9176 18.4166 29.7528C18.6633 29.588 18.9533 29.5 19.25 29.5C19.6478 29.5 20.0294 29.658 20.3107 29.9393C20.592 30.2206 20.75 30.6022 20.75 31ZM29 29.5C28.7033 29.5 28.4133 29.588 28.1666 29.7528C27.92 29.9176 27.7277 30.1519 27.6142 30.426C27.5006 30.7001 27.4709 31.0017 27.5288 31.2926C27.5867 31.5836 27.7296 31.8509 27.9393 32.0607C28.1491 32.2704 28.4164 32.4133 28.7074 32.4712C28.9983 32.5291 29.2999 32.4994 29.574 32.3858C29.8481 32.2723 30.0824 32.08 30.2472 31.8334C30.412 31.5867 30.5 31.2967 30.5 31C30.5 30.6022 30.342 30.2206 30.0607 29.9393C29.7794 29.658 29.3978 29.5 29 29.5ZM33.4728 17.7006L31.0691 26.3519C30.9369 26.8245 30.6542 27.2411 30.2639 27.5385C29.8736 27.8359 29.397 27.9979 28.9062 28H19.64C19.1478 27.9998 18.6693 27.8386 18.2772 27.541C17.8852 27.2435 17.6013 26.8258 17.4688 26.3519L14.18 14.5H12.5C12.3011 14.5 12.1103 14.421 11.9697 14.2803C11.829 14.1397 11.75 13.9489 11.75 13.75C11.75 13.5511 11.829 13.3603 11.9697 13.2197C12.1103 13.079 12.3011 13 12.5 13H14.75C14.914 13 15.0734 13.0537 15.204 13.1529C15.3345 13.2521 15.429 13.3914 15.4728 13.5494L16.3616 16.75H32.75C32.8656 16.75 32.9797 16.7767 33.0833 16.828C33.1869 16.8794 33.2772 16.954 33.3472 17.0461C33.4171 17.1381 33.4649 17.2451 33.4867 17.3586C33.5085 17.4722 33.5037 17.5892 33.4728 17.7006ZM31.7628 18.25H16.7787L18.9172 25.9506C18.961 26.1086 19.0555 26.2479 19.186 26.3471C19.3166 26.4463 19.476 26.5 19.64 26.5H28.9062C29.0702 26.5 29.2297 26.4463 29.3602 26.3471C29.4908 26.2479 29.5852 26.1086 29.6291 25.9506L31.7628 18.25Z" fill="white"/>
+         </svg>
+       </a>
+       <a href="#" aria-label="Account">
+         <svg viewBox="0 0 20 21" fill="none" xmlns="http://www.w3.org/2000/svg">
+           <path d="M18.97 4.6997L10.72 0.185699C10.4996 0.0639325 10.2518 0 10 0C9.74821 0 9.50044 0.0639325 9.28 0.185699L1.03 4.70161C0.794437 4.83046 0.597735 5.02026 0.460495 5.25118C0.323256 5.4821 0.250619 5.7456 0.25 6.01412V14.9804C0.250624 15.2489 0.323273 15.5124 0.460495 15.7433C0.597717 15.9742 0.79444 16.164 1.03 16.2929L9.28 20.8088C9.50044 20.9306 9.74821 20.9945 10 20.9945C10.2518 20.9945 10.4996 20.9306 10.72 20.8088L18.97 16.2929C19.2056 16.164 19.4023 15.9742 19.5395 15.7433C19.6767 15.5124 19.7494 15.2489 19.75 14.9804V6.01512C19.7499 5.74601 19.6774 5.48197 19.5402 5.25051C19.403 5.01905 19.206 4.82889 18.97 4.6997ZM10 1.4982L17.5319 5.6232L14.7409 7.15132L7.20812 3.02632L10 1.4982ZM10 9.7482L2.46812 5.6232L5.64625 3.88319L13.1781 8.00819L10 9.7482ZM1.75 6.9357L9.25 11.0401V19.0829L1.75 14.9813V6.9357ZM18.25 14.9776L10.75 19.0829V11.0438L13.75 9.40224V12.7482C13.75 12.9471 13.829 13.1379 13.9697 13.2785C14.1103 13.4192 14.3011 13.4982 14.5 13.4982C14.6989 13.4982 14.8897 13.4192 15.0303 13.2785C15.171 13.1379 15.25 12.9471 15.25 12.7482V8.581L18.25 6.9357V14.9766V14.9776Z" fill="white"/>
+         </svg>
+       </a>
+     </div>
+   </nav>
+
+   <div class="hero__content">
+     <p class="hero__eyebrow">Explore The World</p>
+     <h1 class="hero__title">Ambatron 4</h1>
+   </div>
+
+   <img class="hero__drone" src="https://api.builder.io/api/v1/image/assets/TEMP/affbf203c9962fae7677948034a02bf78b3ca0e0?width=2270" alt="DJI Drone" />
+
+   <p class="hero__product">AMBATRON 4<br />TRIPLE CAMERA</p>
+
+   <div class="feature-row">
+     <div class="feature-card">
+       <svg viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M53.625 14.4375H46.4784L42.9645 9.16781C42.7762 8.88564 42.5212 8.65426 42.2222 8.49416C41.9231 8.33407 41.5892 8.2502 41.25 8.25H24.75C24.4108 8.2502 24.0769 8.33407 23.7778 8.49416C23.4788 8.65426 23.2238 8.88564 23.0355 9.16781L19.519 14.4375H12.375C10.734 14.4375 9.16016 15.0894 7.99978 16.2498C6.8394 17.4102 6.1875 18.984 6.1875 20.625V49.5C6.1875 51.141 6.8394 52.7148 7.99978 53.8752C9.16016 55.0356 10.734 55.6875 12.375 55.6875H53.625C55.266 55.6875 56.8398 55.0356 58.0002 53.8752C59.1606 52.7148 59.8125 51.141 59.8125 49.5V20.625C59.8125 18.984 59.1606 17.4102 58.0002 16.2498C56.8398 15.0894 55.266 14.4375 53.625 14.4375ZM55.6875 49.5C55.6875 50.047 55.4702 50.5716 55.0834 50.9584C54.6966 51.3452 54.172 51.5625 53.625 51.5625H12.375C11.828 51.5625 11.3034 51.3452 10.9166 50.9584C10.5298 50.5716 10.3125 50.047 10.3125 49.5V20.625C10.3125 20.078 10.5298 19.5534 10.9166 19.1666C11.3034 18.7798 11.828 18.5625 12.375 18.5625H20.625C20.9646 18.5627 21.2991 18.4791 21.5986 18.3189C21.8982 18.1588 22.1535 17.9272 22.342 17.6447L25.8534 12.375H40.144L43.658 17.6447C43.8465 17.9272 44.1018 18.1588 44.4014 18.3189C44.7009 18.4791 45.0354 18.5627 45.375 18.5625H53.625C54.172 18.5625 54.6966 18.7798 55.0834 19.1666C55.4702 19.5534 55.6875 20.078 55.6875 20.625V49.5ZM33 22.6875C30.7564 22.6875 28.5632 23.3528 26.6978 24.5993C24.8323 25.8457 23.3783 27.6174 22.5197 29.6902C21.6612 31.763 21.4365 34.0438 21.8742 36.2443C22.3119 38.4448 23.3923 40.466 24.9788 42.0525C26.5652 43.6389 28.5865 44.7193 30.7869 45.157C32.9874 45.5947 35.2683 45.3701 37.3411 44.5115C39.4139 43.6529 41.1855 42.199 42.432 40.3335C43.6784 38.468 44.3438 36.2748 44.3438 34.0312C44.3403 31.0237 43.1441 28.1404 41.0175 26.0138C38.8908 23.8871 36.0075 22.6909 33 22.6875ZM33 41.25C31.5723 41.25 30.1766 40.8266 28.9895 40.0334C27.8024 39.2402 26.8771 38.1128 26.3307 36.7937C25.7844 35.4747 25.6414 34.0232 25.92 32.6229C26.1985 31.2226 26.886 29.9364 27.8956 28.9268C28.9051 27.9173 30.1914 27.2297 31.5917 26.9512C32.992 26.6727 34.4434 26.8156 35.7625 27.362C37.0815 27.9084 38.209 28.8336 39.0022 30.0207C39.7954 31.2078 40.2188 32.6035 40.2188 34.0312C40.2188 35.9458 39.4582 37.7819 38.1044 39.1357C36.7507 40.4895 34.9145 41.25 33 41.25Z" fill="white"/>
+       </svg>
+       <span>100MP<br />MAIN CAMERA</span>
+     </div>
+
+     <div class="feature-card">
+       <svg viewBox="0 0 66 66" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M64.9095 18.8203C64.5806 18.644 64.21 18.5603 63.8372 18.578C63.4645 18.5957 63.1035 18.7142 62.7928 18.9209L53.625 25.0207V18.5625C53.625 17.4685 53.1904 16.4193 52.4168 15.6457C51.6432 14.8721 50.594 14.4375 49.5 14.4375H8.25C7.15598 14.4375 6.10677 14.8721 5.33318 15.6457C4.5596 16.4193 4.125 17.4685 4.125 18.5625V47.4375C4.125 48.5315 4.5596 49.5807 5.33318 50.3543C6.10677 51.1279 7.15598 51.5625 8.25 51.5625H49.5C50.594 51.5625 51.6432 51.1279 52.4168 50.3543C53.1904 49.5807 53.625 48.5315 53.625 47.4375V40.9922L62.7928 47.1049C63.1333 47.326 63.5315 47.4417 63.9375 47.4375C64.4845 47.4375 65.0091 47.2202 65.3959 46.8334C65.7827 46.4466 66 45.922 66 45.375V20.625C65.9974 20.2539 65.8947 19.8904 65.7028 19.5728C65.5108 19.2551 65.2368 18.9952 64.9095 18.8203ZM49.5 47.4375H8.25V18.5625H49.5V47.4375ZM61.875 41.5207L53.625 36.0216V29.9784L61.875 24.4922V41.5207Z" fill="white"/>
+       </svg>
+       <span>4K/240 FPS<br />RECORDING</span>
+     </div>
+
+    <a href="search.html" class="shop-now-btn">Shop Now</a>
+
+     <div class="feature-card">
+       <svg viewBox="0 0 64 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M49.5 0H6.1875C4.54647 0 2.97266 0.651896 1.81228 1.81228C0.651895 2.97266 0 4.54647 0 6.1875V30.9375C0 32.5785 0.651895 34.1523 1.81228 35.3127C2.97266 36.4731 4.54647 37.125 6.1875 37.125H49.5C51.141 37.125 52.7148 36.4731 53.8752 35.3127C55.0356 34.1523 55.6875 32.5785 55.6875 30.9375V6.1875C55.6875 4.54647 55.0356 2.97266 53.8752 1.81228C52.7148 0.651896 51.141 0 49.5 0ZM51.5625 30.9375C51.5625 31.4845 51.3452 32.0091 50.9584 32.3959C50.5716 32.7827 50.047 33 49.5 33H6.1875C5.64049 33 5.11589 32.7827 4.72909 32.3959C4.3423 32.0091 4.125 31.4845 4.125 30.9375V6.1875C4.125 5.64049 4.3423 5.11589 4.72909 4.72909C5.11589 4.3423 5.64049 4.125 6.1875 4.125H49.5C50.047 4.125 50.5716 4.3423 50.9584 4.72909C51.3452 5.11589 51.5625 5.64049 51.5625 6.1875V30.9375ZM63.9375 10.3125V26.8125C63.9375 27.3595 63.7202 27.8841 63.3334 28.2709C62.9466 28.6577 62.422 28.875 61.875 28.875C61.328 28.875 60.8034 28.6577 60.4166 28.2709C60.0298 27.8841 59.8125 27.3595 59.8125 26.8125V10.3125C59.8125 9.76549 60.0298 9.24089 60.4166 8.85409C60.8034 8.4673 61.328 8.25 61.875 8.25C62.422 8.25 62.9466 8.4673 63.3334 8.85409C63.7202 9.24089 63.9375 9.76549 63.9375 10.3125ZM33.7245 17.4771C33.9096 17.7764 34.015 18.118 34.0308 18.4695C34.0466 18.8211 33.9722 19.1708 33.8147 19.4855L29.6897 27.7355C29.5685 27.9779 29.4007 28.194 29.196 28.3716C28.9912 28.5492 28.7535 28.6847 28.4964 28.7704C28.2393 28.8561 27.9678 28.8903 27.6974 28.8711C27.4271 28.8519 27.1632 28.7796 26.9208 28.6584C26.6784 28.5372 26.4622 28.3695 26.2846 28.1647C26.1071 27.96 25.9715 27.7223 25.8858 27.4651C25.8001 27.208 25.7659 26.9365 25.7851 26.6662C25.8043 26.3959 25.8766 26.1319 25.9978 25.8895L28.6327 20.625H23.7188C23.367 20.6253 23.021 20.5355 22.7137 20.3644C22.4064 20.1932 22.148 19.9463 21.963 19.6472C21.778 19.348 21.6726 19.0065 21.6569 18.6551C21.6411 18.3037 21.7154 17.9541 21.8728 17.6395L25.9978 9.38953C26.119 9.14712 26.2868 8.93095 26.4915 8.75338C26.6963 8.5758 26.934 8.44029 27.1911 8.35459C27.4482 8.26888 27.7197 8.23466 27.9901 8.25387C28.2604 8.27308 28.5243 8.34536 28.7667 8.46656C29.0091 8.58777 29.2253 8.75553 29.4029 8.96028C29.5804 9.16503 29.716 9.40275 29.8017 9.65986C29.8874 9.91698 29.9216 10.1885 29.9024 10.4588C29.8832 10.7291 29.8109 10.9931 29.6897 11.2355L27.0548 16.5H31.9688C32.3204 16.4997 32.6663 16.5893 32.9736 16.7603C33.2809 16.9313 33.5394 17.1781 33.7245 17.4771Z" fill="white"/>
+       </svg>
+       <span>LAST LONG<br />AT LEAST 24 HOURS</span>
+     </div>
+
+     <div class="feature-card">
+       <svg viewBox="0 0 46 53" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M22.875 7.5C18.3508 7.5 13.9281 8.8196 10.1663 11.2919C6.40457 13.7643 3.47262 17.2783 1.74127 21.3896C0.00991142 25.501 -0.44309 30.025 0.439547 34.3895C1.32218 38.7541 3.50082 42.7632 6.69994 45.9099C9.89907 49.0566 13.975 51.1995 18.4123 52.0677C22.8496 52.9358 27.449 52.4903 31.6289 50.7873C35.8088 49.0843 39.3813 46.2004 41.8949 42.5003C44.4084 38.8002 45.75 34.4501 45.75 30C45.7431 24.0347 43.3308 18.3157 39.0424 14.0976C34.754 9.87954 28.9397 7.50682 22.875 7.5ZM22.875 48.75C19.1048 48.75 15.4193 47.6503 12.2845 45.5901C9.14964 43.5298 6.70635 40.6014 5.26356 37.1753C3.82076 33.7492 3.44326 29.9792 4.17879 26.3421C4.91432 22.7049 6.72985 19.364 9.39579 16.7417C12.0617 14.1195 15.4583 12.3337 19.1561 11.6103C22.8539 10.8868 26.6867 11.2581 30.1699 12.6773C33.6531 14.0964 36.6303 16.4996 38.7249 19.5831C40.8195 22.6665 41.9375 26.2916 41.9375 30C41.9318 34.9711 39.9216 39.737 36.348 43.2521C32.7743 46.7672 27.929 48.7444 22.875 48.75ZM33.7549 19.2984C33.9322 19.4726 34.0728 19.6794 34.1687 19.907C34.2646 20.1346 34.314 20.3786 34.314 20.625C34.314 20.8714 34.2646 21.1154 34.1687 21.343C34.0728 21.5706 33.9322 21.7774 33.7549 21.9516L24.2237 31.3266C24.0466 31.5008 23.8363 31.639 23.6049 31.7332C23.3735 31.8275 23.1255 31.876 22.875 31.876C22.6245 31.876 22.3765 31.8275 22.1451 31.7332C21.9137 31.639 21.7034 31.5008 21.5263 31.3266C21.3492 31.1524 21.2087 30.9455 21.1129 30.7179C21.017 30.4903 20.9677 30.2464 20.9677 30C20.9677 29.7536 21.017 29.5097 21.1129 29.2821C21.2087 29.0545 21.3492 28.8476 21.5263 28.6734L31.0576 19.2984C31.2346 19.1241 31.4449 18.9858 31.6763 18.8915C31.9077 18.7971 32.1558 18.7485 32.4063 18.7485C32.6568 18.7485 32.9048 18.7971 33.1362 18.8915C33.3677 18.9858 33.5779 19.1241 33.7549 19.2984ZM15.25 1.875C15.25 1.37772 15.4508 0.900805 15.8083 0.549175C16.1658 0.197544 16.6507 0 17.1563 0H28.5938C29.0993 0 29.5842 0.197544 29.9417 0.549175C30.2992 0.900805 30.5 1.37772 30.5 1.875C30.5 2.37228 30.2992 2.84919 29.9417 3.20083C29.5842 3.55246 29.0993 3.75 28.5938 3.75H17.1563C16.6507 3.75 16.1658 3.55246 15.8083 3.20083C15.4508 2.84919 15.25 2.37228 15.25 1.875Z" fill="white"/>
+       </svg>
+       <span>120W<br />CHARGING</span>
+     </div>
+   </div>
+ </section>
+
+ <!-- ================= PRODUCTS ================= -->
+ <section class="products" id="drones">
+   <div class="container">
+     <h2 class="products__title">EXPLORE AMBA PRODUCTS</h2>
+     <div class="products__grid">
+
+       <div class="product-card">
+         <img src="https://api.builder.io/api/v1/image/assets/TEMP/9173e44a45ce5019dc1b3af481cd3f24d9d0e0b6?width=778" alt="Video Product" />
+         <div class="product-card__content">
+           <h3 class="product-card__category">VIDEO PRODUCT</h3>
+           <p class="product-card__desc">Professional Aerial and Ground Filmmaking Tools</p>
+           <a href="#" class="learn-more">
+             LEARN MORE
+             <svg viewBox="0 0 9 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M8.78104 8.78104L1.28104 16.281C1.21136 16.3507 1.12863 16.406 1.03759 16.4437C0.946545 16.4814 0.848963 16.5008 0.750417 16.5008C0.651871 16.5008 0.554289 16.4814 0.463245 16.4437C0.3722 16.406 0.289474 16.3507 0.219792 16.281C0.150109 16.2114 0.0948337 16.1286 0.0571218 16.0376C0.0194098 15.9465 0 15.849 0 15.7504C0 15.6519 0.0194098 15.5543 0.0571218 15.4632C0.0948337 15.3722 0.150109 15.2895 0.219792 15.2198L7.1901 8.25042L0.219792 1.28104C0.0790612 1.14031 -1.48284e-09 0.94944 0 0.750417C1.48284e-09 0.551394 0.0790612 0.360523 0.219792 0.219792C0.360522 0.0790615 0.551394 1.48284e-09 0.750417 0C0.94944 -1.48284e-09 1.14031 0.0790615 1.28104 0.219792L8.78104 7.71979C8.85077 7.78945 8.90609 7.87216 8.94384 7.96321C8.98158 8.05426 9.00101 8.15186 9.00101 8.25042C9.00101 8.34898 8.98158 8.44657 8.94384 8.53762C8.90609 8.62867 8.85077 8.71139 8.78104 8.78104Z" fill="white"/>
+             </svg>
+           </a>
+         </div>
+       </div>
+
+       <div class="product-card">
+         <img src="https://api.builder.io/api/v1/image/assets/TEMP/0fe971e98fa0c6caf7c371a0c51d2c5b31b5783b?width=778" alt="Enterprise" />
+         <div class="product-card__content">
+           <h3 class="product-card__category">ENTERPRISE</h3>
+           <p class="product-card__desc">Drone Solutions for a New Generation of Work</p>
+           <a href="#" class="learn-more">
+             LEARN MORE
+             <svg viewBox="0 0 9 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M8.78104 8.78104L1.28104 16.281C1.21136 16.3507 1.12863 16.406 1.03759 16.4437C0.946545 16.4814 0.848963 16.5008 0.750417 16.5008C0.651871 16.5008 0.554289 16.4814 0.463245 16.4437C0.3722 16.406 0.289474 16.3507 0.219792 16.281C0.150109 16.2114 0.0948337 16.1286 0.0571218 16.0376C0.0194098 15.9465 0 15.849 0 15.7504C0 15.6519 0.0194098 15.5543 0.0571218 15.4632C0.0948337 15.3722 0.150109 15.2895 0.219792 15.2198L7.1901 8.25042L0.219792 1.28104C0.0790612 1.14031 -1.48284e-09 0.94944 0 0.750417C1.48284e-09 0.551394 0.0790612 0.360523 0.219792 0.219792C0.360522 0.0790615 0.551394 1.48284e-09 0.750417 0C0.94944 -1.48284e-09 1.14031 0.0790615 1.28104 0.219792L8.78104 7.71979C8.85077 7.78945 8.90609 7.87216 8.94384 7.96321C8.98158 8.05426 9.00101 8.15186 9.00101 8.25042C9.00101 8.34898 8.98158 8.44657 8.94384 8.53762C8.90609 8.62867 8.85077 8.71139 8.78104 8.78104Z" fill="white"/>
+             </svg>
+           </a>
+         </div>
+       </div>
+
+       <div class="product-card">
+         <img src="https://api.builder.io/api/v1/image/assets/TEMP/9fc7ce2c70160b493c4af5a52f1c077a54f4064a?width=778" alt="Agriculture" />
+         <div class="product-card__content">
+           <h3 class="product-card__category">AGRICULTURE</h3>
+           <p class="product-card__desc">Efficient and Intelligent Agricultural solution</p>
+           <a href="#" class="learn-more">
+             LEARN MORE
+             <svg viewBox="0 0 9 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+               <path d="M8.78104 8.78104L1.28104 16.281C1.21136 16.3507 1.12863 16.406 1.03759 16.4437C0.946545 16.4814 0.848963 16.5008 0.750417 16.5008C0.651871 16.5008 0.554289 16.4814 0.463245 16.4437C0.3722 16.406 0.289474 16.3507 0.219792 16.281C0.150109 16.2114 0.0948337 16.1286 0.0571218 16.0376C0.0194098 15.9465 0 15.849 0 15.7504C0 15.6519 0.0194098 15.5543 0.0571218 15.4632C0.0948337 15.3722 0.150109 15.2895 0.219792 15.2198L7.1901 8.25042L0.219792 1.28104C0.0790612 1.14031 -1.48284e-09 0.94944 0 0.750417C1.48284e-09 0.551394 0.0790612 0.360523 0.219792 0.219792C0.360522 0.0790615 0.551394 1.48284e-09 0.750417 0C0.94944 -1.48284e-09 1.14031 0.0790615 1.28104 0.219792L8.78104 7.71979C8.85077 7.78945 8.90609 7.87216 8.94384 7.96321C8.98158 8.05426 9.00101 8.15186 9.00101 8.25042C9.00101 8.34898 8.98158 8.44657 8.94384 8.53762C8.90609 8.62867 8.85077 8.71139 8.78104 8.78104Z" fill="white"/>
+             </svg>
+           </a>
+         </div>
+       </div>
+
+     </div>
+   </div>
+ </section>
+
+ <!-- ================= FUAD 360 ================= -->
+ <section class="fuad">
+   <img class="fuad__bg" src="https://api.builder.io/api/v1/image/assets/TEMP/abee392689392d6f8101dce55ff4b792724d8cfd?width=2880" alt="Fuad 360" />
+   <div class="fuad__content">
+     <p class="fuad__eyebrow">8k revolutionary 360° Camera</p>
+     <h2 class="fuad__title">FUAD 360</h2>
+     <p class="fuad__tag">ALL IN ONE</p>
+     <a href="#" class="fuad__link">
+       LEARN MORE
+       <svg viewBox="0 0 9 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+         <path d="M8.78104 8.78104L1.28104 16.281C1.21136 16.3507 1.12863 16.406 1.03759 16.4437C0.946545 16.4814 0.848963 16.5008 0.750417 16.5008C0.651871 16.5008 0.554289 16.4814 0.463245 16.4437C0.3722 16.406 0.289474 16.3507 0.219792 16.281C0.150109 16.2114 0.0948337 16.1286 0.0571218 16.0376C0.0194098 15.9465 0 15.849 0 15.7504C0 15.6519 0.0194098 15.5543 0.0571218 15.4632C0.0948337 15.3722 0.150109 15.2895 0.219792 15.2198L7.1901 8.25042L0.219792 1.28104C0.0790612 1.14031 -1.48284e-09 0.94944 0 0.750417C1.48284e-09 0.551394 0.0790612 0.360523 0.219792 0.219792C0.360522 0.0790615 0.551394 1.48284e-09 0.750417 0C0.94944 -1.48284e-09 1.14031 0.0790615 1.28104 0.219792L8.78104 7.71979C8.85077 7.78945 8.90609 7.87216 8.94384 7.96321C8.98158 8.05426 9.00101 8.15186 9.00101 8.25042C9.00101 8.34898 8.98158 8.44657 8.94384 8.53762C8.90609 8.62867 8.85077 8.71139 8.78104 8.78104Z" fill="black"/>
+       </svg>
+     </a>
+   </div>
+ </section>
+
+ <!-- ================= SERVICES / FOOTER ================= -->
+ <section class="services">
+   <div class="services__grid">
+     <div class="services__box">
+       <div class="services__icon" aria-label="Customer Service icon">
+         <svg viewBox="0 0 24 24">
+           <path d="M4 18v-3a6 6 0 0 1 12 0v3"/>
+           <path d="M4 18a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2"/>
+           <path d="M16 7a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z"/>
+         </svg>
+       </div>
+       <span>Customer Service</span>
+     </div>
+
+     <div class="services__box">
+       <div class="services__icon" aria-label="Product Support icon">
+         <svg viewBox="0 0 24 24">
+           <path d="M12 3 4 7v5c0 4.2 2.9 7.9 8 9 5.1-1.1 8-4.8 8-9V7l-8-4Z"/>
+           <path d="M9.5 12.5 11 14l4-4"/>
+         </svg>
+       </div>
+       <span>Product Support</span>
+     </div>
+
+     <div class="services__box">
+       <div class="services__icon" aria-label="Download Software icon">
+         <svg viewBox="0 0 24 24">
+           <path d="M12 4v10"/>
+           <path d="m8 20 4 4 4-4"/>
+           <path d="M5 15v1a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1"/>
+         </svg>
+       </div>
+       <span>Download Software</span>
+     </div>
+
+     <div class="services__box">
+       <div class="services__icon" aria-label="AmbaCare icon">
+         <svg viewBox="0 0 24 24">
+           <path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/>
+         </svg>
+       </div>
+       <span>AmbaCare</span>
+     </div>
+
+     <div class="services__box">
+       <div class="services__icon" aria-label="Donation icon">
+         <svg viewBox="0 0 24 24">
+           <path d="M12 5v14"/>
+           <path d="M5 12h14"/>
+           <path d="M7 7h10a2 2 0 0 1 2 2v6a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2Z"/>
+         </svg>
+       </div>
+       <span>Donation</span>
+     </div>
+   </div>
+ </section>
+
+<footer class="site-footer">
+  <div class="site-footer__inner">
+    <div class="site-footer__app"><h2>Only in the Ambatron Store App</h2><p>Explore new aerial tools and manage your devices in one place.</p><a class="site-footer__button" href="#">Download App</a></div>
+    <div class="site-footer__columns">
+      <div class="site-footer__column"><h3>Product Categories</h3><a href="drones.html">Consumer</a><a href="drones.html">Professional</a><a href="drones.html">Enterprise</a><a href="drones.html">Components</a><h3>Service Plans</h3><a href="support.html">Ambatron Care</a><a href="support.html">Maintenance</a></div>
+      <div class="site-footer__column"><h3>Where to Buy</h3><a href="#">Ambatron Online Store</a><a href="#">Flagship Stores</a><a href="#">Retail Stores</a><a href="#">Dealer Network</a><h3>Cooperation</h3><a href="#">Become a Dealer</a><a href="#">Apply for Authorized Store</a></div>
+      <div class="site-footer__column"><h3>Fly Safe</h3><a href="#">Fly Safe</a><a href="#">Flying Tips</a><h3>Support</h3><a href="support.html">Product Support</a><a href="support.html">Help Center</a><a href="support.html">Download Center</a></div>
+      <div class="site-footer__column"><h3>Explore</h3><a href="about.html">About Ambatron</a><a href="drones.html">Buying Guides</a><a href="#">Trust Center</a><a href="#">Ambatron Blog</a><h3>Trending Now</h3><a href="drones.html">Camera Drones</a><a href="drones.html">Action Cameras</a></div>
+      <div class="site-footer__column"><h3>Community</h3><a href="#">Ambatron Community</a><a href="#">Forum</a><a href="#">Developer</a><h3>Subscribe</h3><a href="#">Get the latest news from Ambatron</a></div>
+    </div>
+    <div class="site-footer__bottom"><div class="site-footer__brand">amba</div><div class="site-footer__bottom-links"><a href="#">Who We Are</a><a href="#">Contact Us</a><a href="#">Careers</a><a href="support.html">Support</a></div><div class="site-footer__socials"><a href="#" aria-label="Facebook">f</a><a href="#" aria-label="X">x</a><a href="#" aria-label="YouTube">▶</a><a href="#" aria-label="Instagram">◎</a></div></div>
+    <div class="site-footer__legal"><span>Privacy Policy</span><span>•</span><span>Terms of Use</span><span>•</span><span>Accessibility</span><span>•</span><span>Cookie Preferences</span><span>•</span><span>Copyright © 2026 Ambatron</span></div>
+  </div>
+</footer>
+</body>
+</html>
